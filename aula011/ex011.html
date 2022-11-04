@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font: normal 1.4em Arial
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Estrangeiro ou Não?</h1>
+    <label for="pergunta">Qual é o seu país de origem?</label>
+    <input type="text" name="pergunta" id="pergunta">
+    <input type="button" value="Verificar" onclick="clicar()">
+    <div id="res">
+        
+    <script>
+        function clicar() {
+            var p = document.getElementById('pergunta')
+            var pn = p.value
+            var res = document.getElementById('res')
+            res.innerHTML = `Vivendo no país <strong>${pn}</strong> `
+            if (pn == 'Brasil' || 'brasil' || 'BR' || 'br') {
+                res.innerHTML += 'você é <strong>brasileiro</strong>!'
+            } else {
+                res.innerHTML += 'você é <strong>estrangeiro</strong>!'
+            }
+        }
+    </script>
+</body>
+</html>
