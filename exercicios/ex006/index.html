@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número com JS</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 15px;
+            padding: 30px;
+
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Somando dois números</h1>
+        <button onclick="soma()">Iniciar a Soma!</button>
+        <section id="res">O resultado vem aqui...<aqui class=""></aqui></section>
+    </section>
+
+    <script>
+        function soma() {
+            let num1 = Number(prompt('Digite um número:'))
+            let num2 = Number(prompt('Digite outro número:'))
+            res.innerHTML = `A soma entre <mark>${num1}</mark> e <mark>${num2}</mark> é igual a ${num1 + num2}!`
+        }
+    </script>
+</body>
+</html>

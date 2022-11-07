@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio boas-vindas</title>
+    <style>
+        body {
+            background-color: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+
+            text-align: center;
+        }
+
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        button {
+            font-size: 1.3em;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Boas-vindas</h1>
+        <button onclick="inicie()">Inicie o Desafio!</button>
+    </div>
+
+    <script>
+        function inicie() {
+            var nome = prompt('Qual é o seu nome?')
+            if (nome == '') {
+                alert('Precisa digitar seu nome para iniciar o desafio!')
+            } else {
+                var idade = prompt(`Olá, ${nome}! Quantos anos você tem?`)
+            } 
+            if (idade == '' ) {
+                alert('Precisa digitar sua idade para continuar com o desafio!')
+            } else if (idade !== '' && nome !== '') {
+                alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`)
+            }
+            
+        }
+    </script>
+</body>
+</html>

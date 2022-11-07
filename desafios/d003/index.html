@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+            
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 15px;
+            padding: 30px;
+
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Antes e Depois</h1>
+        <button onclick="clicou()">Antecessor e Sucessor</button>
+    </section>
+
+    <script>
+        function clicou() {
+            let num = prompt('Digite um número inteiro qualquer:')
+            if (num == '') {
+                num = 0
+                alert('Você não disse o número, então ele será 0.')
+                alert(`Antes de ${num}, temos o número ${num-1}.
+Depois de ${num}, temos o número ${num+1}.`)
+            } else {
+                num = parseInt(num)
+                alert(`Antes de ${num}, temos o número ${num-1}.
+Depois de ${num}, temos o número ${num+1}.`)
+            }
+            
+        }
+    </script>
+</body>
+</html>

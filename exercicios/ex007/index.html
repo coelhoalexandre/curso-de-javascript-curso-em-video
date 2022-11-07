@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 15px;
+            padding: 30px;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+        
+        section > p{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Média do aluno v1.0</h1>
+        <button onclick="media()">Calcular Média!</button>
+        <section id="res">O resultado vai aparecer aqui...</section>
+    </section>
+
+    <script>
+        function media() {
+            let nome = prompt('Qual é o nome do aluno?')
+            if (nome == '') {
+                alert('Precisamos de um nome para continuar!')
+            } else {
+            let pnota = Number(prompt(`Qual foi a primeira nota de ${nome}?`))
+            let onota = Number(prompt(`Além de ${pnota}, qual foi a outra nota de ${nome}`))
+            res.innerHTML = `<p>Calculando a média final de  <mark>${nome}</mark></p>`
+            res.innerHTML += `<p>As notas obtidas foram <mark>${pnota} e ${onota}</mark></p>`
+            res.innerHTML += `<p>A média final será <mark>${(pnota+onota)/2}</mark></p>`
+            }
+        }
+    </script>
+</body>
+</html>

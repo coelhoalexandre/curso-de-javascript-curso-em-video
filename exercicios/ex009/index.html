@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+            
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 15px;
+            padding: 30px;
+
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+
+        section > p{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Contador de Cliques</h1>
+        <button onclick="somar()">Clique em Mim!</button>
+        <button onclick="zerar()">Zerar o Contador!</button>
+        <section id="res">O contador está com <mark>0</mark> cliques.</section>
+    </section>
+
+    <script>
+        var cliques = 0
+
+        function somar() {
+            cliques++
+            res.innerHTML = `O contador está com <mark>${cliques}</mark> cliques.`
+        }
+
+        function zerar() {
+            cliques = 0
+            res.innerHTML = ''
+        }
+    </script>
+</body>
+</html>

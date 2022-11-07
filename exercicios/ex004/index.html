@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados com JS</title>
+    <style>
+        body {
+            background: black;
+            font: 1.3em Arial, Helvetica, sans-serif;
+            color: white;
+            
+            text-align: center;
+        }
+
+        div {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.4em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Trabalhando com dados v2.0</h1>
+        <button onclick="inicio()">Clique para Começar!</button>
+        <section id="resultado">
+            <p>Aqui vai aparecer o resultado...</p>
+        </section>
+    </div>
+
+    <script>
+        function inicio() {
+            let nome = window.prompt('Qual é o seu nome?')
+            if (nome == '') {
+                alert('Precisa preencher a caixa para prosseguir...')
+            } else {
+                let res = window.document.getElementById('resultado')
+                res.innerHTML = `<p>Olá, <strong>${nome}</strong>! É um grande prazer te chonhecer! &#x1F596`
+            }
+        }
+    </script>
+</body>
+</html>
