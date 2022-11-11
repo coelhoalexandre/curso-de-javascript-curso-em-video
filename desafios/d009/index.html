@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+            
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 15px;
+            padding: 30px;
+
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+
+        section#res > p {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Reajuste salarial</h1>
+        <button onclick="reajuste()">Reajustar Salário</button>
+        <section id="res">Clique no botão acima para iniciar.</section>
+    </section>
+
+    <script>
+        function reajuste() {
+            let nome = prompt('Qual é o nome do funcionário?')
+            let valor = [prompt(`Qual é o salário de ${nome}?`), prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)]
+
+            valor[0] = valor[0].replace(",", ".")
+            valor[1] = valor[1].replace(",", ".")
+
+            let reajusteDe = Number(valor[0]) * Number(valor[1])/100
+            let reajustadoEm = Number(valor[0]) + reajusteDe
+            valor[0] = Number(valor[0]).toFixed(2)
+            valor[1] = Number(valor[1]).toFixed(2)
+            reajusteDe = reajusteDe.toFixed(2)
+            reajustadoEm = reajustadoEm.toFixed(2)
+
+            reajusteDe = reajusteDe.toString()
+            reajustadoEm = reajustadoEm.toString()
+
+            valor[0] = valor[0].replace(".", ",")
+            valor[1] = valor[1].replace(".", ",")
+            reajusteDe = reajusteDe.replace(".", ",")
+            reajustadoEm = reajustadoEm.replace(".", ",")
+
+            res.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>`
+            res.innerHTML += `<p>O salário atual era de R$ ${valor[0]}.</p>`
+            res.innerHTML += `<p>Com um aumento de ${valor[1]}%, o salário vai aumentar R$ ${reajusteDe} no próximo mês.</p>`
+            res.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar R$ ${reajustadoEm}.</p>`
+        }
+    </script>
+</body>
+</html>

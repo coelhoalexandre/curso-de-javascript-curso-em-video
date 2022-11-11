@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Desconto</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+            
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 15px;
+            padding: 30px;
+
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Calcular Desconto</h1>
+        <button onclick="desconto()">Desconto de 10%</button>
+        <section id="res">Clique no botão acima para iniciar.</section>
+    </section>
+
+    <script>
+        function desconto() {
+            let produto = prompt('Qual é o produto que você está comprando?')
+            let preçostring = prompt(`Qual é o preço de ${produto}`)
+            let preço = preçostring.replace(",", ".") //código que permite escrever preço com virgula
+            preço = Number(preço) //transformando o preço em número
+
+            let desconto = preço / 10 //calculando o desconto de 10%
+            let descontado = preço - desconto //retirando o desconto do preço total
+            preço = preço.toFixed(2) //fixando duas casas decimais
+            desconto = desconto.toFixed(2)
+            descontado = descontado.toFixed(2)
+
+            preço = preço.toString() //transformando o número em string
+            opreço = preço.replace(".", ",") //trocando o . usado pelo calculo por virgulas
+
+            desconto = desconto.toString()
+            odesconto = desconto.replace(".", ",")
+
+            descontado = descontado.toString()
+            odescontado = descontado.replace(".", ",")
+            
+            res.innerHTML = `<h2>Calculando desconto de 10% para ${produto}</h2>`
+            res.innerHTML += `<p>O preço original era R$ ${opreço}.</p>`
+            res.innerHTML += `<p>Você acaba de ganhar R$ ${odesconto} de desconto (-10%).</p>`
+            res.innerHTML += `<p>No fim, você vai pagar R$ ${odescontado} no produto ${produto}.</p>`
+        }
+    </script>
+</body>
+</html>

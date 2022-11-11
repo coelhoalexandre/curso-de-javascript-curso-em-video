@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: black;
+            font: 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+            
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 15px;
+            padding: 30px;
+
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Conversos R$ -> US$</h1>
+        <button onclick="converter()">Converter</button>
+        <section id="res">Clique no botão acimpa iniciar</section>
+    </section>
+    <script>
+        var cotacao = Number(prompt('Antes de mais nada. Quanto está a cotação do dólar agora?'))
+        function converter() {
+            let carteira = Number(prompt('Quantos R$ você tem na carteira?'))
+            let dolar = carteira / cotacao
+            dolar = dolar.toFixed(2)
+            res.innerHTML = `Pela cotação atual, você tem o equivalente a US$${dolar}`
+        }
+    </script>
+</body>
+</html>
