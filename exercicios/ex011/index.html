@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: black;
+            font: normal 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        strong#ver {
+            color: rgba(242, 11, 11, 0.809);
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Média do Aluno v2.0</h1>
+        <button onclick="calcular()">Calcular Média!</button>
+        <section id="res">O resultado vai aparecer aqui...</section>
+    </section>
+
+    <script>
+        function calcular() {
+            let nome = prompt('Qual é o nome do aluno?')
+            let nota01 = prompt(`Qual foi a primeira nota de ${nome}`)
+            let nota02 = prompt(`Além de ${nota01}, qual foi a outra de ${nome}?`)
+
+            nota01 = nota01.replace(",", ".")
+            nota02 = nota02.replace(",", ".")
+
+            let media = (Number(nota01) + Number(nota02))/2
+            
+            nota01 = Number(nota01).toFixed(2)
+            nota02 = Number(nota02).toFixed(2)
+            media = media.toFixed(2)
+
+            media = media.toString()
+            media = media.replace(".", ",")
+            nota01 = nota01.replace(".", ",")
+            nota02 = nota02.replace(".", ",")
+
+            res.innerHTML = `<p>Calculando a média final de ${nome}</p>`
+            res.innerHTML += `<p>As notas obtidas foram ${nota01} e ${nota02}</p>`
+            res.innerHTML += `<p>A média final será ${media}</p>`
+
+            media = media.replace(",", ".")
+
+            if (media < 6) {
+                res.innerHTML += `<p>A mensagem que temos é: <strong id="ver">Estude um pouco mais!</strong></p>`
+            } else {
+                res.innerHTML += `<p>A mensagem que temos é: <strong id="ver">Meus parabéns!</strong></p>`
+            }
+             
+        }
+    </script>
+</body>
+</html>

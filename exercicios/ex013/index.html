@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Valor</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: black;
+            font: normal 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Maior Valor</h1>
+        <button onclick="começar()">Clique para Começar!</button>
+        <section id="res">O resultado vai aperecer aqui...</section>
+    </section>
+
+    <script>
+        function começar() {
+            let valor = {
+                num01: parseInt(prompt('Digite um número inteiro:')),
+                num02: parseInt(prompt('Digite outro número inteiro:'))
+            }
+
+            if (valor.num01 == valor.num02){
+                res.innerHTML = (`Analisando os valores ${valor.num01} e ${valor.num02}, ambos são <strong>IGUAIS</strong> `)
+            } else if (valor.num01 > valor.num02) {
+                res.innerHTML = (`Analisando os valores ${valor.num01} e ${valor.num02}, o maior valor é <strong>${valor.num01}</strong> `)
+            } else if (valor.num01 < valor.num02) {
+                res.innerHTML = (`Analisando os valores ${valor.num01} e ${valor.num02}, o maior valor é <strong>${valor.num02}</strong> `)
+            } else {
+                alert('Valor não selecionado, autamaticamente receberam 0!')
+                valor.num01 = 0
+                valor.num02 = 0
+                res.innerHTML = (`Analisando os valores ${valor.num01} e ${valor.num02}, ambos são <strong>IGUAIS</strong> `)
+            }
+            
+        }
+    </script>
+</body>
+</html>

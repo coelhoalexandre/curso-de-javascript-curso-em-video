@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo com o sistema</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: black;
+            font: normal 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Interagindo com o sitema</h1>
+        <button onclick="clicar()">Clique em mim!</button>
+        <section id="res">Aqui vai aparecer algo...</section>
+    </section>
+
+    <script>
+        function clicar() {
+            let agora = new Date
+
+            res.innerHTML = `<p>O que eu recebi do sistema foi <mark>${agora}</mark></p>`  
+        }
+    </script>
+</body>
+</html>

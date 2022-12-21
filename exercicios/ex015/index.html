@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisando Data e Hora</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: black;
+            font: normal 1.2em Arial, Helvetica, sans-serif;
+            color: white;
+
+            text-align: center;
+        }
+
+        section#container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background-color: rgba(242, 11, 11, 0.809);
+            color: white;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <h1>Analisando data e hora do Sistema</h1>
+        <button onclick="iniciar()">Iniciar Análise!</button>
+        <section id="res">Aqui vai aparecer algo...</section>
+    </section>
+
+    <script>
+        function iniciar() {
+            let meses = new Array('Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez')
+            let semana = new Array ('Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb')
+            let agora = new Date
+
+            let dia = agora.getDate()
+            let mes = agora.getMonth()
+            let ano = agora.getFullYear()
+            let sem = agora.getDay()
+            let hora = agora.getHours()
+            let min = agora.getMinutes()
+            let seg = agora.getSeconds()
+
+            res.innerHTML = `<p>Dia: <mark>${dia}</mark></p>`
+            res.innerHTML += `<p>Mês: <mark>${meses[mes]}</mark></p>`
+            res.innerHTML += `<p>Ano: <mark>${ano}</mark></p>`
+            res.innerHTML += `<p>Dia da semana: <mark>${semana[sem]}</mark></p>`
+            res.innerHTML += `<p>Hora: <mark>${hora}</mark></p>`
+            res.innerHTML += `<p>Minutos: <mark>${min}</mark></p>`
+            res.innerHTML += `<p>Segundos: <mark>${seg}</mark></p>`
+        }
+    </script>
+</body>
+</html>
