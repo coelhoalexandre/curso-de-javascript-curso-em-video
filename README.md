@@ -22,9 +22,10 @@ Para saber o Repositorio e qual curso, vá em [autores](#autores).
 
 ## Como Ver os Exercicios e Desafios?
 
-Para ser possivel acessar as pastas, estarei disponibilizando logo abaixo links. Desculpe-me se aparentar desorganização: 
+Infelizmente, ainda não disponibilizei links para cada uma das pastas com execicios e desafios, assim só é possivel vizualiar os códigos. Caso deseje ver como fique em um site, pode-se clonar o projeto ou acesso manual através dos links.
 
-[Desafios](https://github.com/coelhoalexandre/curso-de-javascript-curso-em-video/tree/main/desafios) | [Exercicios](https://github.com/coelhoalexandre/curso-de-javascript-curso-em-video/tree/main/exercicios)
+Exemplo de acesso manual através dos links: [https://coelhoalexandre.github.io/curso-de-javascript-curso-em-video/exercicios/ex001/](https://coelhoalexandre.github.io/curso-de-javascript-curso-em-video/exercicios/ex001/)
+
 ## Tecnolgias Utilizadas
 
 - Visual Studio Code;
