@@ -8,7 +8,7 @@
 
 </div>
 
-## Sobre o Projeto
+## Sobre o Curso
 
 ### Status: ![Concluído](https://img.shields.io/badge/Concluído-sucess.svg)
 
